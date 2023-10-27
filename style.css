@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+
+  
+  --bg-color: hsl(0, 0%, 100%);
+  --bb-on: hsl(194, 97%, 31%);
+  --bb-off: hsl(240, 9%, 89%);
+  --bt-color: hsl(240, 6%, 21%);
+  
+}
+
+.secondary {
+  background-color: var(--bb-on);
+  color: var(--bg-color);
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+#app {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+
+  margin: -1;
+  padding: 0;
+  border: 0;
+  appearance: none;
+}
+
+#timer {
+  font-size: 12.6rem;
+  font-weight: bold;
+  font-family: sans-serif;
+
+  color: var(--bt-color);
+}
+
+#controls {
+  margin-top: 1.7rem;
+  
+  gap: 3.5rem;
+}
+
+#controls button {
+  background-color: transparent;
+  border: 0;
+
+  cursor: pointer;
+
+  font-size: 5.4rem;
+  color: var(--bt-color);
+}
+
+#figures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+  margin-left: 19rem;
+}
+
+#figures button {
+  width: 13rem;
+  height: 15rem;
+  border-radius: 2.4rem;
+  border: none;
+
+  font-size: 5.4rem;
+
+  cursor: pointer;
+  background-color: var(--bb-off);
+}
+
+#figures .ph-tree:hover, .music-on1 #tree{
+  background-color: hsl(129.62deg 68.86% 27%);
+}
+
+#figures .ph-cloud-rain:hover, .music-on2 #rain {
+  background-color: var(--bb-on);
+}
+
+#figures .ph-storefront:hover, .music-on3 #market {
+  background-color: hsl(65, 63%, 52%);
+}
+
+#figures .ph-fire:hover, .music-on4 #fire {
+  background-color: hsl(0, 79%, 38%);
+}
+
+:hover {
+  transition: 1s;
+}
+
+/*Controls*/
+
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle {
+  display: none;
+}
